@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunklc_dwiki=globalThis.webpackChunklc_dwiki||[]).push([[1903],{1912(i){i.exports=JSON.parse('{"blogBasePath":"/LCDwiki/en/blog","blogTitle":"Blog","authorsListPath":"/LCDwiki/en/blog/authors"}')}}]);

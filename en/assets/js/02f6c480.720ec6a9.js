@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunklc_dwiki=globalThis.webpackChunklc_dwiki||[]).push([[6408],{6231(l){l.exports=JSON.parse('{"metadata":{"permalink":"/LCDwiki/en/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
