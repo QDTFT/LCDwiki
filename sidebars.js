@@ -1,30 +1,68 @@
-// sidebars.js - 最简可用版本（无版本依赖、无语法错误）
+// sidebars.js
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+
+// 1. 子项配置（仅内部使用，不导出）
+const raspberryPiItems = [
+  { 
+    type: 'doc', 
+    id: '树莓派显示屏/5inch_HDMI_Display',
+    label: '5inch_HDMI_Display' 
+  },
+  { 
+    type: 'doc', 
+    id: '树莓派显示屏/5inch_HDMI_Display-B', 
+    label: '5inch_HDMI_Display-B' 
+  },
+  { 
+    type: 'doc', 
+    id: '树莓派显示屏/5inch_HDMI_Display-C', 
+    label: '5inch_HDMI_Display-C' 
+  },
+];
+
+const arduinoItems = [
+  { 
+    type: 'doc', 
+    id: 'Arduino显示屏/2.4inch_Arduino_Display', 
+    label: '2.4inch_Arduino_Display' 
+  },
+  { 
+    type: 'doc', 
+    id: 'Arduino显示屏/2.8inch_Arduino_Display', 
+    label: '2.8inch_Arduino_Display' 
+  },
+  { 
+    type: 'doc', 
+    id: 'Arduino显示屏/3.5inch_Arduino_Display', 
+    label: '3.5inch_Arduino_Display' 
+  },
+];
+
+// 2. 侧边栏主配置
 const sidebars = {
-  // 唯一侧边栏 ID（与 docusaurus.config.js 中 docs.sidebarPath 匹配）
-  tutorialSidebar: [
-    // 一级菜单：快速入门
-    {
-      type: 'doc',
-      id: 'intro', // 对应 docs/intro.md 文件
-      label: '简介',
+  tutorialSidebar: [ // 这个键就是 sidebarId：tutorialSidebar
+    { 
+      type: 'doc', 
+      id: 'intro',
+      label: 'Welcome to LCDwiki' 
     },
-    // 一级菜单：目录分组示例
     {
       type: 'category',
-      label: 'LCD 硬件基础',
-      items: [
-        { type: 'doc', id: 'hardware/overview', label: '硬件概述' },
-        { type: 'doc', id: 'hardware/pinout', label: '引脚定义' },
-      ],
+      label: '树莓派显示屏',
+      items: raspberryPiItems,
     },
-    // 外部链接
     {
-      type: 'link',
-      label: 'GitHub',
-      href: 'https://github.com/QDTFT/LCDwiki',
+      type: 'category',
+      label: 'Arduino显示屏',
+      items: arduinoItems,
     },
+    { type: 'link', label: 'GitHub', href: 'https://github.com/QDTFT/LCDwiki' },
   ],
 };
 
+// 🔴 核心修正：仅默认导出 sidebars 对象（不导出其他变量）
 module.exports = sidebars;
+
+// 🔴 新增：单独导出子项（供导航栏使用，不影响侧边栏解析）
+module.exports.raspberryPiItems = raspberryPiItems;
+module.exports.arduinoItems = arduinoItems;

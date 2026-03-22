@@ -24,9 +24,12 @@
   border-radius: 8px;
 }
 
-/* GitHub 链接图标 */
-.header-github-link:hover {
-  opacity: 0.8;
+/* 3. GitHub 链接专属对齐修复 */
+.header-github-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.3rem !important; /* 若后续加图标，保证图标和文字间距 */
+  vertical-align: middle !important; /* 兜底对齐 */
 }
 
 .header-github-link:before {
