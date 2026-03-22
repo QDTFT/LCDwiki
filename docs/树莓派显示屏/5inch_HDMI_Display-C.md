@@ -1,18 +1,7 @@
+sidebar_position:3        
+title: 快速开始            
+sidebar_label: 5inch HDMI Display-C
+       
 ---
-sidebar_position: 2        # 侧边栏显示顺序（数字越小越靠前）
-title: 快速开始            # 侧边栏显示的标题
-description: 快速上手 Docusaurus 的核心步骤  # 可选：文档描述
-slug: /quick-start         # 可选：自定义访问路径（默认是文件路径）
----
 
-# 快速开始
-<!-- 这里写文档正文 -->
-
-## 1. 环境准备
-- Node.js ≥ 18.0.0
-- npm ≥ 8.0.0
-
-## 2. 核心步骤
-1. 初始化项目
-2. 配置 Logo
-3. 启动本地服务
+测试页面2

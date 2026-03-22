@@ -16,7 +16,7 @@ const raspberryPiItems = [
   { 
     type: 'doc', 
     id: '树莓派显示屏/5inch_HDMI_Display-C', 
-    label: '5inch_HDMI_Display-C' 
+    label: '5inch_HDMI_Display-C'  
   },
 ];
 

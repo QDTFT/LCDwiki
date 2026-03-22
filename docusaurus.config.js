@@ -137,7 +137,7 @@ const config = {
           title: '所有文档',
           items: [
             { label: '快速入门', to: '/docs/intro' },
-            { label: 'LCD 驱动开发', to: '/docs/category/lcd-驱动开发' },
+            // 🔴 删除这行无效链接：{ label: 'LCD 驱动开发', to: '/docs/category/lcd-驱动开发' },
           ],
         },
       ],
