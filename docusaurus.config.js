@@ -33,13 +33,9 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
-  // 修复废弃配置
+  // 修复断链检查配置（修正 onBrokenMarkdownLinks 位置）
   onBrokenLinks: 'throw',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
+  onBrokenMarkdownLinks: 'warn', // 移到根配置，而非 markdown.hooks 下
 
   i18n: {
     defaultLocale: 'zh-Hans',
@@ -47,7 +43,7 @@ const config = {
     localeConfigs: {
       "zh-Hans": {
         label: '简体中文',
-        path: '/LCDwiki/', 
+        // 移除多余的 path 配置（baseUrl 已包含 /LCDwiki/）
         direction: 'ltr',
         htmlLang: 'zh-Hans',
       },
@@ -65,9 +61,8 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // 🔴 确认：sidebarPath 指向正确的 sidebars.js
-          path: 'docs', // 中文文档目录（你现有目录）
-          routeBasePath: '/', // 中文文档路由根路径
+          path: 'docs', // 中文文档目录
+          routeBasePath: '/', // 中文文档路由根路径（关键：docs 直接映射到 /）
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/QDTFT/LCDwiki/edit/main/',
           showLastUpdateTime: true,
@@ -96,7 +91,7 @@ const config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar', // 🔴 匹配 sidebars 对象内部的键
+          sidebarId: 'tutorialSidebar', // 匹配 sidebars 对象内部的键
           position: 'left',
           label: '所有文档',
         },
@@ -123,7 +118,7 @@ const config = {
           localeDropdownProps: {
             languages: [
               { code: 'zh-Hans', label: '中文（简体）' },
-              { code: 'en', label: 'English' }, // code 必须是 'en'，和 i18n 目录名一致
+              { code: 'en', label: 'English' },
             ],
           },
         },
@@ -142,8 +137,8 @@ const config = {
         {
           title: '所有文档',
           items: [
-            { label: '快速入门', to: '/docs/intro' },
-            // 🔴 删除这行无效链接：{ label: 'LCD 驱动开发', to: '/docs/category/lcd-驱动开发' },
+            // 修复核心断链：/docs/intro → /intro（因为 routeBasePath: '/'）
+            { label: '快速入门', to: '/intro' },
           ],
         },
       ],
