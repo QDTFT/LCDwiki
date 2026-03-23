@@ -18,6 +18,11 @@ const raspberryPiItems = [
     id: '树莓派显示屏/5inch_HDMI_Display-C', 
     label: '5inch_HDMI_Display-C'  
   },
+  { 
+    type: 'doc', 
+    id: '树莓派显示屏/tabs', 
+    label: 'tabs'  
+  },
 ];
 
 const arduinoItems = [

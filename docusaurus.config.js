@@ -47,13 +47,15 @@ const config = {
     localeConfigs: {
       "zh-Hans": {
         label: '简体中文',
+        path: '/LCDwiki/', 
         direction: 'ltr',
-        htmlLang: 'zh-CN',
+        htmlLang: 'zh-Hans',
       },
       en: {
         label: 'English',
+        path: 'en', // 英文路由前缀是 /en
         direction: 'ltr',
-        htmlLang: 'en-US',
+        htmlLang: 'en',
       },
     },
   },
@@ -64,6 +66,8 @@ const config = {
       {
         docs: {
           // 🔴 确认：sidebarPath 指向正确的 sidebars.js
+          path: 'docs', // 中文文档目录（你现有目录）
+          routeBasePath: '/', // 中文文档路由根路径
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/QDTFT/LCDwiki/edit/main/',
           showLastUpdateTime: true,
@@ -116,10 +120,12 @@ const config = {
         {
           type: 'localeDropdown',
           position: 'right',
-          dropdownItemsAfter: [
-            { type: 'html', value: '<hr style="margin: 0.3rem 0;">' },
-            { href: 'https://github.com/QDTFT/LCDwiki', label: '帮助翻译' },
-          ],
+          localeDropdownProps: {
+            languages: [
+              { code: 'zh-Hans', label: '中文（简体）' },
+              { code: 'en', label: 'English' }, // code 必须是 'en'，和 i18n 目录名一致
+            ],
+          },
         },
         {
           href: 'https://github.com/QDTFT/LCDwiki',

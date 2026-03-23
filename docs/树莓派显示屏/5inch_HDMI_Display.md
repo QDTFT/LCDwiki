@@ -1,9 +1,6 @@
 ---
-sidebar_position: 1        
-title: 快速开始            
-description: 快速上手 5inch HDMI 显示屏的核心步骤  
-sidebar_label: 5inch HDMI屏  
- 
+sidebar_position: 1          
+description: 5A-MPI5008说明文档
 ---
 
 
@@ -11,9 +8,8 @@ sidebar_label: 5inch HDMI屏
 
 
 ## 产品图片
-
-![产品正面图](./MPI5008/img/MPI5008-66.png)
-![与树莓派连接](./MPI5008/img/MPI5008-30.jpg)
+<img src={require("./MPI5008/img/MPI5008-66.png").default} alt="产品正面图" width="400" />
+<img src={require("./MPI5008/img/MPI5008-30.jpg").default} alt="与树莓派连接" width="400" />
 
 ## 产品介绍
 - 5inch标准显示器，硬件分辨率800×480
@@ -38,23 +34,22 @@ sidebar_label: 5inch HDMI屏
 
 ## 硬件说明
 ### 接口定义
-![产品正面图](./MPI5008/img/MPI5008-006.jpg)
-![产品正面图](./MPI5008/img/MPI5008-02.png)
-① USB 供电接口：USB供电输入（5V），如图④母座已连接树莓派取电，则此USB可不接
-② HDMI 接口：用于连接主板和 LCD 显示屏进行HDMI传输
-③ 背光开关：控制背光打开和关闭，可节省功耗
-④ 电源和触摸接口：从树莓派取电给液晶屏，同时将触摸信号通过GPIO回传至树莓派
-⑤ 扩展接口：将图④母座占用的GPIO口PIN对PIN引出，方便扩展使用
+<img src={require("./MPI5008/img/MPI5008-006.jpg").default} alt="接口定义" width="350" />![引脚图](./MPI5008/img/MPI5008-02.png)
+
+① USB 供电接口：USB供电输入（5V），如图④母座已连接树莓派取电，则此USB可不接  
+② HDMI 接口：用于连接主板和 LCD 显示屏进行HDMI传输  
+③ 背光开关：控制背光打开和关闭，可节省功耗   
+④ 电源和触摸接口：从树莓派取电给液晶屏，同时将触摸信号通过GPIO回传至树莓派   
+⑤ 扩展接口：将图④母座占用的GPIO口PIN对PIN引出，方便扩展使用   
 
 ### 产品尺寸
 ![产品尺寸图](./MPI5008/img/5-RTD2660-size-2.jpg)
 
 ## 与树莓派连接
 ![产品正面图](./MPI5008/img/MPI5008-002.jpg) 
-    连接步骤1
-   ① 将LCD 13×2Pin母座按上图与树莓派连接
-![产品正面图](./MPI5008/img/MPI5008-06.jpg) 
-    连接步骤 ② 将配套的HDMI转接头与树莓派连接
+- 连接步骤1 ① 将LCD 13×2Pin母座按上图与树莓派连接
+<img src={require("./MPI5008/img/MPI5008-06.jpg").default} alt="HDMI转接头与树莓派连接" width="350" />
+- 连接步骤2 ② 将配套的HDMI转接头与树莓派连接
 
 
 ## 在树莓派Raspbian/Ubuntu Mate/Win10 IoT Core系统中使用
@@ -95,7 +90,10 @@ sudo ./LCD5-show
 作为电脑显示器用，触摸功能将不可用。
 
 ## 如何旋转显示方向
+
+:::warning 注意
 注：此方法只针对树莓派系列的显示屏，其它显示屏并不适用
+:::
 #### 第一步，如果还没有安装驱动，请执行下面的命令（树莓派需要联网）：
 ```
 sudo rm -rf LCD-show
@@ -136,25 +134,24 @@ sudo ./rotate.sh 90
 - 关于树莓派电阻触摸翻转问题说明
 ## 驱动下载
 本地下载:LCD-show.tar.gz
-镜像下载
+### 镜像下载
 如果你觉得前面步骤的修改配置、安装驱动都比较困难或者仍然显示异常，请先使用我们预装好驱动的镜像，
 下载后解压并把镜像写入到Micro SD卡中。然后把卡插入树莓派就可以使用了。
-镜像名称	支持的树莓派版本	用户名	密码
-Raspbian	Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+,Pi Zero W,Pi Zero	pi	raspberry
-Ubuntu-MATE-32bit	Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+	pi	raspberry
-Kali Linux
-RaspberryPi-32bit
+| 镜像名称                          | 支持的树莓派版本                                                                 | 用户名 | 密码       |
+| --------------------------------- | -------------------------------------------------------------------------------- | ------ | ---------- |
+| Raspbian                          | Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+,Pi Zero W,Pi Zero                        | pi     | raspberry  |
+| Ubuntu-MATE-32bit                 | Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+                                          | pi     | raspberry  |
+| Kali Linux RaspberryPi-32bit       | Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+                                          | kali   | kali       |
+### 镜像地址
 
-Pi4B,Pi3B+/Pi3B,Pi2B,PiB+/PiB,Pi3A+,PiA+	kali	kali
-Image Name	Version	Download
-Raspbian	2025-05-13	BaiduYun:	MPI5008-5inch-A-2025-05-13-raspios-bookworm-armhf(Pi4-Pi5) 提取码：sgbv
-Mega:	MPI5008-5inch-A-2021-10-30-raspios-buster-armhf.7z
-Ubuntu-MATE-32bit	22.04	BaiduYun:	MPI5008-5inch-A-ubuntu-mate-22.04-desktop-armhf+raspi.7z 提取码：u7q3
-Mega:	MPI5008-5inch-A-ubuntu-mate-20.1-desktop-armhf+raspi.7z
-Kali Linux RaspberryPi-32bit	2025.1	BaiduYun:	MPI5008-5inch-A-kali-linux-2025.1 提取码：psmp
-Mega:	MPI5008-5inch-A-kali-linux-2021.2
-镜像文件MD5校验
-常用软件
-Panasonic SDFormatter
-Win32DiskImager
-PuTTY
+| Image Name                          | Version   | Download                                                                                                 |
+| ----------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| Raspbian                            | 2025-05-13 | BaiduYun: MPI5008-5inch-A-2025-05-13-raspios-bookworm-armhf(Pi4-Pi5)提取码：sgbv  Mega: MPI5008-5inch-A-2021-10-30-raspios-buster-armhf.7z|
+| Ubuntu-MATE-32bit                   | 22.04     | BaiduYun: MPI5008-5inch-A-ubuntu-mate-22.04-desktop-armhf+raspi.7z 提取码：u7q3 Mega: MPI5008-5inch-A-ubuntu-mate-20.1-desktop-armhf+raspi.7z|
+| Kali Linux RaspberryPi-32bit        | 2025.1    | BaiduYun: MPI5008-5inch-A-kali-linux-2025.1 提取码：psmp  Mega: MPI5008-5inch-A-kali-linux-2021.2|
+
+### 镜像文件MD5校验
+## 常用软件
+- Panasonic SDFormatter
+- Win32DiskImager
+- PuTTY
