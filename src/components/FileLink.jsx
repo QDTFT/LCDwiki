@@ -31,7 +31,7 @@ export default function FileLink({ href, children, ext }) {
       <img
         src={useBaseUrl(icon)}
         alt={fileExt}
-        style={{ width: '16px', height: '16px' }}
+        style={{ width: '30px', height: '30px' }}
       />
       <span>{children}</span>
     </a>
